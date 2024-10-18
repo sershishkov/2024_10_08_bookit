@@ -20,6 +20,7 @@ const RoomPage = async ({ params }) => {
   const imageUrl = `https://cloud.appwrite.io/v1/storage/buckets/${bucketId}/files/${room.image}/view?project=${projectId}`;
 
   const imageSrc = room.image ? imageUrl : '/images/no-image.jpg';
+  // console.log(room);
   return (
     <>
       <Heading title={room.name} />
@@ -66,7 +67,7 @@ const RoomPage = async ({ params }) => {
             </ul>
           </div>
         </div>
-        <BookingForm />
+        <BookingForm room={room} />
       </div>
     </>
   );
